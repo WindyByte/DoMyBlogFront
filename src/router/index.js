@@ -5,7 +5,7 @@ import About from '../views/About.vue';
 
 const routes = [
     { path: '/', name: 'Home', component: Home },
-    { path: '/post/:id', name: 'BlogPost', component: BlogPost },
+    { path: '/post', name: 'BlogPost', component: BlogPost },
     { path: '/about', name: 'About', component: About },
 ];
 
