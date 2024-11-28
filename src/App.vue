@@ -19,6 +19,6 @@ export default {
 /* 全局样式 */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Monaco, sans-serif;
 }
 </style>
