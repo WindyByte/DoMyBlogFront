@@ -1,10 +1,11 @@
 <template>
   <div class="sidebar">
-    <h3>最近博客</h3>
+    <h1>相关文章</h1>
     <ul>
       <li v-for="article in articles" :key="article.articleID">
-        <!-- 每个博客标题是一个链接，点击跳转详情页 -->
-        <a :href="`/article/${article.articleID}`">{{ article.title }}</a>
+        <router-link :to="{ path: '/article', query: { articleID: article.articleID } }">
+          {{ article.title }}
+        </router-link>
       </li>
     </ul>
     <p v-if="loading">加载中...</p>
@@ -32,7 +33,8 @@ export default {
       this.loading = true;
       this.error = false;
       try {
-        const response = await fetch(api.relatedArticleList);
+        const limit = 20;
+        const response = await fetch(api.relatedArticleList + `?limit=${limit}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -64,37 +66,44 @@ export default {
 
 <style scoped>
 .sidebar {
-  padding: 16px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  padding: 8px;
+  background-color: #f6f6e5;
+  border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .sidebar h3 {
   font-size: 18px;
   margin-bottom: 12px;
 }
+
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .sidebar li {
   margin-bottom: 8px;
   font-size: 14px;
 }
+
 .sidebar li a {
   text-decoration: none;
   color: #007bff;
 }
+
 .sidebar li a:hover {
   text-decoration: underline;
 }
+
 .sidebar .date {
   display: block;
   font-size: 12px;
   color: #666;
   margin-top: 2px;
 }
+
 .error {
   color: red;
   margin-top: 10px;
