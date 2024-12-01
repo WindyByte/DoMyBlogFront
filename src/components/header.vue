@@ -11,13 +11,13 @@
 
 <style>
 header {
-  background-color: #333;
+  background-color: #d19d5d;
   color: bisque;
   padding: 1em;
   text-align: center;
 }
 nav a {
-  color: bisque;
+  color: #0b0808;
   margin: 0 1em;
   text-decoration: none;
 }
