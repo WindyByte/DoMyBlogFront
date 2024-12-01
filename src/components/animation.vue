@@ -44,29 +44,45 @@ export default {
   },
   methods: {
     async startRotating() {
-      let currentRotation = 0; // 初始角度
+      let currentRotation = 0;
       const box = this.$refs.box;
 
       while (true) {
-        // 每次增加 90 度
         currentRotation += 90;
-        if (currentRotation >= 360) currentRotation = 0; // 重置为 0
+        if (currentRotation >= 360) currentRotation = 0;
 
-        // 执行动画并等待完成
-        await animate(
-            box,
-            { rotate: currentRotation }, // 设置目标旋转角度
-            {
-              type: "spring",       // 使用弹簧动画
-              stiffness: 300,       // 弹性强度
-              duration: 0.8,        // 每次动画持续时间
-            }
-        );
+        await animate(box, { rotate: currentRotation }, { type: "spring", stiffness: 300, duration: 0.8 });
+
+        // 增加 500 毫秒延迟
       }
     }
+
+    // async startRotating() {
+    //   let currentRotation = 0; // 初始角度
+    //   const box = this.$refs.box;
+    //
+    //   while (true) {
+    //     // 每次增加 90 度
+    //     currentRotation += 90;
+    //     if (currentRotation >= 360) currentRotation = 0; // 重置为 0
+    //
+    //     // 执行动画并等待完成
+    //     await animate(
+    //         box,
+    //         { rotate: currentRotation }, // 设置目标旋转角度
+    //         {
+    //           type: "spring",       // 使用弹簧动画
+    //           stiffness: 300,       // 弹性强度
+    //           duration: 0.8,        // 每次动画持续时间
+    //         }
+    //     );
+    //   }
+    // }
   }
 };
-
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 </script>
 
 <style scoped>
