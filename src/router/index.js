@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/home.vue';
-import BlogPost from '../views/article_view.vue';
+import ArticleView from '../views/article_view.vue';
 import About from '../views/about.vue';
 import Animation from '../components/animation.vue';
 import ArticleDetail from '@/components/article_detail.vue';
@@ -12,9 +12,9 @@ const routes = [
         component: Home
     },
     {
-        path: '/post',
-        name: 'BlogPost',
-        component: BlogPost
+        path: '/articleView',
+        name: 'ArticleView',
+        component: ArticleView
     },
     {
         path: '/about',
@@ -29,7 +29,7 @@ const routes = [
     {
         path: '/article', // 动态路由匹配
         name: 'ArticleDetail',
-        component: ArticleDetail, // 博客详情页组件
+        component: ArticleDetail, // 文章详情页组件
         props: true, // 将路由参数作为 props 传递给组件
     },
 ];

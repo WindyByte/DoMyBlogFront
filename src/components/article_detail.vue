@@ -1,20 +1,32 @@
 <template>
-  <div class="article-detail">
-    <h1 v-if="article">文章标题: {{ article.title }}</h1>
-    <p v-if="loading">加载中...</p>
-    <p v-if="error" class="error">加载失败，请稍后再试。</p>
-    <div v-if="!loading && !error" v-html="article.content"></div>
+  <div class="article-container">
+    <!-- 文章标题 -->
+    <div class="article-header">
+      <h1 v-if="article">{{ article.title }}</h1>
+      <p v-if="loading" class="loading">加载中...</p>
+      <p v-if="error" class="error">加载失败，请稍后再试。</p>
+    </div>
+
+    <!-- 文章内容 (Markdown 渲染) -->
+    <div
+        v-if="!loading && !error && article"
+        class="article-content"
+        v-html="renderedMarkdown"
+    ></div>
   </div>
 </template>
 
 <script>
+import { marked } from "marked";
 import api from "@/api/article.js"
+import "@/assets/article_detail.css";
 export default {
   data() {
     return {
       article: null, // 存储文章数据
       loading: true, // 加载状态
       error: false, // 错误状态
+      renderedMarkdown: "", // 渲染后的 Markdown
     };
   },
   async created() {
@@ -36,6 +48,10 @@ export default {
         console.log("Parsed JSON:", result);
         this.article = result.data
         console.log(this.result);
+        // 解析 Markdown
+        if (this.article.content) {
+          this.renderedMarkdown = marked(this.article.content);
+        }
       } catch (error) {
         console.error('Error fetching article:', error);
         this.error = true;

@@ -5,13 +5,13 @@
         <p v-if="!showEditor">写文章</p>
       </button>
       <!-- 写博客弹出窗 -->
-      <div v-if="showEditor" class="overlay" @click.self="toggleEditor">
-        <div class="popup">
-          <h2>写文章</h2>
-          <submitArticle />
-          <button @click="toggleEditor" class="close-btn">关闭</button>
+      <transition name="popup">
+        <div v-if="showEditor" class="overlay" @click.self="toggleEditor">
+          <div class="popup">
+            <submitArticle @closeEditor="toggleEditor" />
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
     <!-- 侧边栏 -->
     <aside class="sidebar">
@@ -23,7 +23,7 @@
 <script>
 import relatedArticles from '@/components/relate_article.vue';
 import submitArticle from '@/components/publish_article.vue';
-import "@/assets/article_page.css"
+import "@/assets/article_view.css"
 
 export default {
   components: {

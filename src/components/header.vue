@@ -2,7 +2,7 @@
   <header>
     <nav>
       <router-link to="/">Home</router-link>
-      <router-link to="/post">Blog</router-link>
+      <router-link to="/articleView">Article</router-link>
       <router-link to="/animation">Animation</router-link>
       <router-link to="/about">About</router-link>
     </nav>

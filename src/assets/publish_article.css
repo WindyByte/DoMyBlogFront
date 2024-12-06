@@ -1,0 +1,230 @@
+.markdown-editor {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-color: #c0392b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 占满整个视窗高度 */
+    box-sizing: border-box;
+    position: relative; /* 为关闭按钮提供定位参考 */
+    gap: 5px;
+
+}
+
+.title-container {
+    margin-bottom: 16px;
+}
+
+.title-label {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #c0392b; /* 文章标题颜色 */
+}
+
+.title-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 20px;
+    color: #0b0808; /* 输入文章标题颜色 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* 容器样式 */
+/*.dropdown-container {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    !*align-content: center;*!*/
+/*    position: relative;*/
+/*    width: 500px;*/
+/*    font-family: monospace, sans-serif;*/
+/*}*/
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 按钮与已选标签之间的间距 */
+    position: relative;
+    font-family: monospace, sans-serif;
+}
+
+/* 触发按钮样式 */
+.dropdown-trigger {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 20px;
+    color: #333;
+    background-color: #ffffff;
+    border: 2px solid #c73cd7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.dropdown-trigger:hover {
+    border-color: #05fed4;
+}
+
+.dropdown-arrow {
+    border: 5px solid transparent;
+    border-top-color: #333;
+}
+
+/* 下拉菜单样式 */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.dropdown-item {
+    padding: 8px 16px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    /*background-color: #f70202;*/
+    /*color: #0037ff;*/
+    background-color: rgba(2, 247, 51, 0.56); /* 背景变浅蓝色 */
+    color: #0018b3; /* 改为深蓝色 */
+}
+
+.dropdown-wrapper {
+    width: 300px;
+    position: relative;
+}
+
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 标签之间的间距 */
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    background-color: #fb7403;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.tag-remove {
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.tag-remove:hover {
+    color: #ff4d4f;
+}
+
+.editor-container {
+    display: flex;
+    flex: 1; /* 占据父容器剩余空间 */
+    /*height: 70%;*/
+    gap: 16px;
+    overflow: hidden;
+}
+
+.editor,
+.preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow-y: auto; /* 允许滚动 */
+}
+
+textarea {
+    flex: 1; /* 自动填充父容器 */
+    resize: none;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 15px;
+    border: none;
+    /*outline: #0b0808 solid 1px;*/
+    overflow-y: auto; /* 允许滚动 */
+}
+
+h3 {
+    margin: 0;
+    padding: 8px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.submit-container {
+    display: flex; /* 启用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    gap: 16px; /* 按钮之间的间距 */
+    margin-top: 16px; /* 与上方的 preview 保持一定间距 */
+    padding: 8px 0;
+}
+
+.submit-btn {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 50px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: #2be259;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    transform: scale(1.2);
+}
+
+.close-btn {
+    font-size: 20px; /* 与提交按钮一致 */
+    font-weight: bold; /* 字体加粗 */
+    padding: 18px 50px; /* 内边距与提交按钮一致 */
+    color: #fff;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border-radius: 24px;
+    border: #2be259;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果一致 */
+}
+
+.close-btn:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    transform: scale(1.2); /* 放大按钮一致 */
+}

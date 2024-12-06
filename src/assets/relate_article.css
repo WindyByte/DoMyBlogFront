@@ -1,43 +1,66 @@
 .sidebar {
-    padding: 8px;
-    background-color: #f6f6e5;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 3px;
+    flex: 0 0 20%; /* 固定宽度为页面的 20% */
+    padding: 2px; /* 增加内边距 */
+    background-color: #ffffff; /* 使用白色背景 */
+    border-radius: 15px; /* 圆角 */
+    font-family: monospace, sans-serif; /* 设置现代字体 */
+    transition: all 0.3s ease-in-out; /* 添加过渡效果 */
 }
 
-.sidebar h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
+.sidebar:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 悬停时阴影加深 */
+    transform: translateY(-2px); /* 轻微上移 */
+}
+
+.sidebar h1 {
+    font-size: 40px; /* 增大标题字体 */
+    font-weight: bold; /* 加粗标题 */
+    color: #333333; /* 深灰色字体 */
+    margin-bottom: 16px; /* 增加间距 */
+    border-bottom: 4px solid #f70202; /* 添加分割线 */
+    padding-bottom: 8px; /* 标题与内容间增加空隙 */
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* 去除默认列表样式 */
+    padding: 0; /* 移除内边距 */
+    margin: 0; /* 移除外边距 */
 }
 
 .sidebar li {
-    margin-bottom: 8px;
-    font-size: 14px;
+    margin-bottom: 12px; /* 增加项目间距 */
+    font-size: 16px; /* 调整字体大小 */
+    line-height: 1.6; /* 增加行高 */
 }
 
 .sidebar li a {
-    text-decoration: none;
-    color: #007bff;
+    text-decoration: none; /* 去掉下划线 */
+    color: #007bff; /* 使用亮蓝色 */
+    font-weight: 550; /* 增加字体粗细 */
+    border: 1px solid transparent; /* 设置边框为透明 */
+    padding: 4px 8px; /* 增加可点击区域 */
+    border-radius: 5px; /* 增加圆角 */
+    transition: all 0.3s ease-in-out; /* 添加过渡效果 */
 }
 
 .sidebar li a:hover {
-    text-decoration: underline;
+    text-decoration: none; /* 悬停时保持无下划线 */
+    background-color: rgba(2, 247, 51, 0.56); /* 背景变浅蓝色 */
+    color: #0056b3; /* 改为深蓝色 */
+    border-color: #05fed4; /* 显示边框 */
 }
 
 .sidebar .date {
-    display: block;
-    font-size: 12px;
-    color: #666;
-    margin-top: 2px;
+    display: block; /* 单独占一行 */
+    font-size: 12px; /* 较小字体 */
+    color: #888888; /* 更浅的灰色 */
+    margin-top: 4px; /* 与上方内容的间距 */
 }
 
 .error {
-    color: red;
-    margin-top: 10px;
+    color: #ff4d4f; /* 使用鲜红色 */
+    margin-top: 12px; /* 与上方内容增加间距 */
+    font-weight: bold; /* 加粗提示信息 */
+    font-size: 14px; /* 调整字体大小 */
 }

@@ -1,0 +1,101 @@
+.main-pages {
+    display: flex;
+    gap: 20px; /* 子元素间距 */
+    flex-direction: row; /* 横向排列 */
+    /*padding: 20px; !* 整体内边距 *!*/
+    /*background-color: #f8f9fa; !* 淡灰背景色*/
+    /*border-radius: 10px; !* 圆角边框*/
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); !* 整体阴影*/
+}
+
+.content {
+    flex: 5; /* 主内容占 5 份宽度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    padding: 3em;
+    /*background-color: #ffffff; !* 白色背景 *!*/
+    /*border: 1px solid #e3e3e3; !* 浅灰色边框 *!*/
+    /*border-radius: 10px; !* 圆角边框 *!*/
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); !* 阴影效果 *!*/
+    transition: all 0.3s ease-in-out; /* 动画过渡 */
+}
+
+.main-pages:hover .content:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 悬停时阴影加深 */
+}
+
+
+/* 背景遮罩 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 保证浮窗在最上层 */
+}
+
+/* 弹出窗样式 */
+.popup {
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    animation: popup-fade-in 0.3s ease-in-out;
+}
+
+/* 弹出动画 */
+@keyframes popup-fade-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 弹窗进入和离开动画的过渡样式 */
+.popup-enter-active,
+.popup-leave-active {
+    transition: all 0.3s ease-in-out;
+}
+
+.popup-enter,
+.popup-leave-to {
+    transform: scale(0.7); /* 缩小 */
+    opacity: 0; /* 透明 */
+}
+
+.popup-enter-to,
+.popup-leave {
+    transform: scale(1); /* 放大 */
+    opacity: 1; /* 显示 */
+    /*transform: scale(1) rotate(-90deg); !* 放大 *!*/
+}
+
+.write-blog-btn {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 50px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: #2be259;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.write-blog-btn:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    transform: scale(1.2);
+}

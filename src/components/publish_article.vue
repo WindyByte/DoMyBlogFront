@@ -1,9 +1,7 @@
 <template>
   <div class="markdown-editor">
-    <h2>写博客（支持 Markdown）</h2>
     <!-- 标题输入区域 -->
     <div class="title-container">
-      <label for="title">标题：</label>
       <input
           id="title"
           type="text"
@@ -12,9 +10,37 @@
           class="title-input"
       />
     </div>
-    <!-- Markdown 编辑与预览 -->
+
+    <!-- 标签输入 -->
+    <div class="dropdown-container">
+      <div class="dropdown-wrapper">
+        <button class="dropdown-trigger" @click="toggleDropdown">
+          {{ '选择标签' }}
+          <span class="dropdown-arrow"></span>
+        </button>
+        <!-- 下拉菜单 -->
+        <ul v-if="isOpen" class="dropdown-menu">
+          <li
+              v-for="(option, index) in tagOptions"
+              :key="index"
+              class="dropdown-item"
+              @click="selectTag(option)"
+          >
+            {{ option }}
+          </li>
+        </ul>
+      </div>
+      <!-- 已选标签显示 -->
+      <div class="selected-tags">
+        <span v-for="(tag, index) in tags" :key="index" class="tag">
+        {{ tag }}
+        <span class="tag-remove" @click="removeTag(index)">×</span>
+    </span>
+      </div>
+    </div>
+
+    <!-- 编辑器与预览区域 -->
     <div class="editor-container">
-      <!-- Markdown 编辑区域 -->
       <div class="editor">
         <h3>编辑</h3>
         <textarea
@@ -22,26 +48,32 @@
             placeholder="在这里输入 Markdown 内容"
         ></textarea>
       </div>
-      <!-- Markdown 预览区域 -->
       <div class="preview">
         <h3>预览</h3>
         <div v-html="htmlContent"></div>
       </div>
     </div>
-    <button @click="publishArticle" class="submit-btn">提交</button>
+    <!-- 提交按钮 -->
+    <div class="submit-container">
+      <button @click="publishArticle" class="submit-btn">提交</button>
+      <button class="close-btn" @click="$emit('closeEditor')">关闭</button>
+    </div>
   </div>
 </template>
 
 <script>
-import { marked } from "marked";
+import {marked} from "marked";
 import api from "@/api/article.js";
-import "@/assets/markdown_editor.css";
+import "@/assets/publish_article.css";
 
 export default {
   data() {
     return {
       title: "",
       markdownContent: "", // 用户输入的 Markdown 内容
+      tags: [], // 用户选择的标签
+      isOpen: false, // 控制下拉菜单显示
+      tagOptions: ["Backend", "Frontend", "Fullstack", "Database", "OS", "Network"], // 可选标签
     };
   },
   computed: {
@@ -51,6 +83,20 @@ export default {
     },
   },
   methods: {
+    toggleDropdown() {
+      this.isOpen = !this.isOpen;
+    },
+    selectTag(option) {
+      // 选择标签后关闭下拉菜单，并添加到已选列表
+      if (!this.tags.includes(option)) {
+        this.tags.push(option);
+      }
+      // this.isOpen = false;
+    },
+    removeTag(index) {
+      // 移除指定标签
+      this.tags.splice(index, 1);
+    },
     async publishArticle() {
       if (!this.title.trim()) {
         alert("标题不能为空！");
@@ -64,6 +110,7 @@ export default {
         title: this.title, // 提交的标题
         markdown: this.markdownContent, // 原始 Markdown 内容
         html: this.htmlContent, // 解析后的 HTML
+        tags: this.tags, // 提交的标签
       };
 
       try {
