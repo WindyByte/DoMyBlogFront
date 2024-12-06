@@ -1,0 +1,69 @@
+.article-container {
+    max-width: 70%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #ffffff; /* 白色背景 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    border-radius: 8px; /* 圆角 */
+    font-family: 'Roboto', sans-serif;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.article-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: #007bff; /* 蓝色提示 */
+}
+
+.error {
+    font-size: 1.2rem;
+    color: #e63946; /* 红色提示 */
+}
+
+.article-content {
+    line-height: 1.8;
+    color: #444;
+    font-size: 1.2rem;
+    word-break: break-word; /* 处理超长单词 */
+}
+
+.article-content img {
+    max-width: 100%; /* 图片自适应 */
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.article-content blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #f9f9f9; /* 灰色背景 */
+    border-left: 4px solid #007bff; /* 左侧蓝色条 */
+}
+
+.article-content ul,
+.article-content ol {
+    padding-left: 2rem;
+}
+
+.article-content a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.article-content a:hover {
+    text-decoration: none;
+}
