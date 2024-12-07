@@ -17,7 +17,9 @@
 </template>
 
 <script>
-import { marked } from "marked";
+import MarkdownIt from "markdown-it";
+import markdownItKatex from "markdown-it-katex";
+import "katex/dist/katex.min.css"; // 引入 KaTeX 样式
 import api from "@/api/article.js"
 import "@/assets/article_detail.css";
 export default {
@@ -39,6 +41,15 @@ export default {
     }
   },
   methods: {
+    renderedMarkdownFunc() {
+      const md = new MarkdownIt({
+        html: true, // 支持 HTML
+        linkify: true, // 自动识别链接
+        typographer: true, // 启用排版优化
+      }).use(markdownItKatex); // 使用数学公式插件
+
+      return md.render(this.article.content);
+    },
     async fetchArticle(articleID) {
       this.loading = true;
       try {
@@ -50,7 +61,8 @@ export default {
         console.log(this.result);
         // 解析 Markdown
         if (this.article.content) {
-          this.renderedMarkdown = marked(this.article.content);
+          this.renderedMarkdown = this.renderedMarkdownFunc();
+          // this.renderedMarkdown = marked(this.article.content);
         }
       } catch (error) {
         console.error('Error fetching article:', error);

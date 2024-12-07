@@ -1,20 +1,20 @@
 .sidebar {
     margin-top: 3px;
-    flex: 0 0 20%; /* 固定宽度为页面的 20% */
-    padding: 2px; /* 增加内边距 */
-    background-color: #ffffff; /* 使用白色背景 */
-    border-radius: 15px; /* 圆角 */
+    flex: 0 0 15%; /* 固定宽度为页面的 20% */
+    /*padding: 2px; !* 增加内边距 *!*/
+    /*background-color: #ffffff; !* 使用白色背景 *!*/
+    /*border-radius: 15px; !* 圆角 *!*/
     font-family: monospace, sans-serif; /* 设置现代字体 */
     transition: all 0.3s ease-in-out; /* 添加过渡效果 */
 }
 
 .sidebar:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 悬停时阴影加深 */
+    /*box-shadow: 0 6px 12px rgb(247, 2, 2); !* 悬停时阴影加深 *!*/
     transform: translateY(-2px); /* 轻微上移 */
 }
 
 .sidebar h1 {
-    font-size: 40px; /* 增大标题字体 */
+    font-size: 30px; /* 增大标题字体 */
     font-weight: bold; /* 加粗标题 */
     color: #333333; /* 深灰色字体 */
     margin-bottom: 16px; /* 增加间距 */

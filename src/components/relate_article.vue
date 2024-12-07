@@ -39,7 +39,6 @@ export default {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        // const result = await response.json(); // 解析 JSON
         const result = JSON.parse(await response.text()); // 解析 JSON
         console.log("Parsed JSON:", result);
 
