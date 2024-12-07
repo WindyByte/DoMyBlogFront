@@ -42,14 +42,14 @@
     <!-- 编辑器与预览区域 -->
     <div class="editor-container">
       <div class="editor">
-        <h3>编辑</h3>
+<!--        <h3>编辑</h3>-->
         <textarea
             v-model="markdownContent"
             placeholder="在这里输入 Markdown 内容"
         ></textarea>
       </div>
       <div class="preview">
-        <h3>预览</h3>
+<!--        <h3>预览</h3>-->
         <div v-html="htmlContent"></div>
       </div>
     </div>
@@ -65,6 +65,7 @@
 import {marked} from "marked";
 import api from "@/api/article.js";
 import "@/assets/publish_article.css";
+import { TAG_OPTIONS } from "@/constant/tags.js";
 
 export default {
   data() {
@@ -73,7 +74,7 @@ export default {
       markdownContent: "", // 用户输入的 Markdown 内容
       tags: [], // 用户选择的标签
       isOpen: false, // 控制下拉菜单显示
-      tagOptions: ["Backend", "Frontend", "Fullstack", "Database", "OS", "Network"], // 可选标签
+      tagOptions: TAG_OPTIONS, // 可选标签
     };
   },
   computed: {

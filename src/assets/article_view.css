@@ -1,18 +1,20 @@
 .main-pages {
     display: flex;
-    gap: 20px; /* 子元素间距 */
+    gap: 10px; /* 子元素间距 */
     flex-direction: row; /* 横向排列 */
-    /*padding: 20px; !* 整体内边距 *!*/
-    /*background-color: #f8f9fa; !* 淡灰背景色*/
-    /*border-radius: 10px; !* 圆角边框*/
-    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); !* 整体阴影*/
+    /*overflow: hidden; !* 防止溢出 *!*/
+    box-sizing: border-box; /* 包括边框和内边距 */
+    width: 100%;
 }
 
 .content {
-    flex: 5; /* 主内容占 5 份宽度 */
+    /*flex: 5; !* 主内容占 5 份宽度 *!*/
+    /*flex: 0 0 80%; !* 主内容占剩余 80% 宽度 *!*/
+    width: 100%;
     display: flex;
+    /*box-sizing: border-box; !* 包括边框和内边距 *!*/
     flex-direction: column;
-    align-items: center; /* 水平居中 */
+    align-items: flex-start; /* 水平居中 */
     padding: 3em;
     /*background-color: #ffffff; !* 白色背景 *!*/
     /*border: 1px solid #e3e3e3; !* 浅灰色边框 *!*/
@@ -25,6 +27,137 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 悬停时阴影加深 */
 }
 
+.tag-group {
+    /*width: 138%; !* 宽度占满父容器 *!*/
+    margin: 0 0 15px 0; /* 仅设置下边距 */
+    /*margin-bottom: 15px; !* 增加分组间距 *!*/
+    width: 140vh;
+    /*width: 100%;*/
+    padding: 15px;
+    background-color: #ffffff; /* 浅灰背景 */
+    border: 2px solid #ddd;
+    border-radius: 8px; /* 增加圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tag-group li a:hover {
+    text-decoration: none; /* 悬停时保持无下划线 */
+    background-color: rgba(2, 247, 51, 0.56); /* 背景变浅蓝色 */
+    color: #0056b3; /* 改为深蓝色 */
+    border-color: #05fed4; /* 显示边框 */
+}
+
+/* 卡片容器，采用 grid 布局 */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 响应式列布局 */
+    gap: 14px; /* 卡片之间的间距 */
+}
+
+/* 单个文章卡片样式 */
+.article-card {
+    text-decoration: none; /* 去掉下划线 */
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+    overflow: hidden;
+    animation: popup-fade-in 0.6s ease-in-out;
+}
+
+.article-card a {
+    text-decoration: none; /* 去掉下划线 */
+    color: inherit; /* 继承父元素的颜色 */
+}
+
+.article-card:hover {
+    transform: scale(1.1); /* 悬停时放大效果 */
+    box-shadow: 0 0 12px rgb(5, 254, 212); /* 悬停时阴影加深 */
+}
+
+.article-card-content h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f7ae02; /* 添加分割线 */
+    color: #d19d5d; /* 标题颜色 */
+}
+
+.article-card-content p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #0b0808; /* 文章内容字体颜色 */
+}
+
+.article-footer {
+    margin-top: auto; /* 将 footer 推到卡片底部 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 右对齐 */
+    gap: 8px; /* 图标和文字之间的间距 */
+    font-size: 14px; /* 文字大小 */
+    color: #555; /* 字体颜色 */
+    border-top: 1px solid #ff7e5f; /* 分割线 */
+    padding-top: 8px; /* 顶部内边距 */
+}
+
+
+.views-count {
+    display: flex;
+    padding: 5px;
+    /*border-top: #ff7e5f 1px solid;*/
+    /*border-left: #2be259 3px solid;*/
+    font-size: 14px; /* 字号 */
+    color: #333; /* 深灰色 */
+    font-weight: bold; /* 加粗 */
+}
+
+.article-card-content {
+    /*font-size: 12px;*/
+    /*margin-top: 2px;*/
+    display: flex;
+    flex-direction: column; /* 内容从上到下排列 */
+    justify-content: space-between; /* 上下内容分布均匀 */
+    height: 100%; /* 填充整个卡片高度 */
+    padding: 8px;
+    box-sizing: border-box; /* 包括内边距 */
+}
+
+.tag-group ul {
+    list-style: none; /* 去除默认列表样式 */
+    padding: 0; /* 移除内边距 */
+    margin: 0; /* 移除外边距 */
+    border: 1px solid #ddd;
+}
+
+.article-link {
+    margin-bottom: 12px; /* 增加项目间距 */
+    font-size: 25px; /* 调整字体大小 */
+    line-height: 1.6; /* 增加行高 */
+}
+
+.article-link a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #007bff; /* 使用亮蓝色 */
+    font-weight: 550; /* 增加字体粗细 */
+    border: 1px solid transparent; /* 设置边框为透明 */
+    padding: 4px 8px; /* 增加可点击区域 */
+    border-radius: 5px; /* 增加圆角 */
+    transition: all 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+.tag-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    background-color: #ffffff;
+    color: #ff7300;
+}
 
 /* 背景遮罩 */
 .overlay {

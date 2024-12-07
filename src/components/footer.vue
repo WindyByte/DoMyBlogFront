@@ -14,6 +14,6 @@ footer {
   position: fixed; /* 固定在页面底部 */
   bottom: 0;
   width: 100%; /* 宽度占满 */
-  font-size: 14px; /* 减小字体大小 */
+  font-size: 12px; /* 减小字体大小 */
 }
 </style>

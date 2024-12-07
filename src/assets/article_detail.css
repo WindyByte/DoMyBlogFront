@@ -9,12 +9,13 @@
 }
 
 .article-header {
+    font-size: 30px;
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .article-header h1 {
-    font-size: 2rem;
+    font-size: 30px;
     font-weight: bold;
     color: #333;
     margin: 0;
