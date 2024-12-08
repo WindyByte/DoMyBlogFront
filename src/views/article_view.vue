@@ -10,7 +10,7 @@
                 <router-link :to="{ path: '/article', query: { articleID: article.articleID } }">
                   <div class="article-card-content">
                     <h3>{{ article.title }}</h3>
-                    <p>{{ article.content.slice(0, 100) }}...</p>
+                    <p>{{ article.content ? article.content.slice(0, 100) + '...' : '无数据' }}</p>
                     <div class="article-footer">
                       <p class="views-count">Views: {{ article.views }}</p>
                     </div>
@@ -29,15 +29,15 @@
       <transition name="popup">
         <div v-if="showEditor" class="overlay" @click.self="toggleEditor">
           <div class="popup">
-            <publishArticle @closeEditor="toggleEditor"/>
+            <publishArticle_v2 @closeEditor="toggleEditor"/>
           </div>
         </div>
       </transition>
     </div>
     <!-- 侧边栏 -->
-    <aside class="sidebar">
-      <relatedArticles/>
-    </aside>
+<!--    <aside class="sidebar">-->
+<!--      <relatedArticles/>-->
+<!--    </aside>-->
   </div>
 </template>
 

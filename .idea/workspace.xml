@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3731f883-3c08-4be8-80e3-7e1d12138ae3" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/assets/article_view.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/publish_article.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/article_page.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/markdown_editor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/relate_article.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/relate_article.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/animation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/animation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/article_detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article_detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/publish_article.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/publish_article.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/gray.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/article_view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/article_view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/publish_article_v2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/publish_article_v2.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/article_view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/article_view.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +23,13 @@
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/cherry-markdown/dist/cherry-markdown.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/dark.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/gray.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/green.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/node_modules/katex/src/Options.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -47,10 +50,10 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "feat/add/animation",
+    "git-widget-placeholder": "feat/cherry/markdown",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/bytedance/DoMyBlog/front-vue",
+    "last_opened_file_path": "/Users/bytedance/DoMyBlog/front-vue/node_modules/cherry-markdown/src/sass/themes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,6 +64,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
