@@ -54,6 +54,8 @@
 
 <script>
 import 'cherry-markdown/dist/cherry-markdown.css';
+import 'cherry-markdown/src/sass/themes/orange.scss'
+import 'cherry-markdown/src/sass/themes/diy.scss'
 import Cherry from 'cherry-markdown';
 import {marked} from "marked"; // 用于解析 Markdown
 import api from "@/api/article.js";
@@ -84,31 +86,66 @@ export default {
     initCherryEditor() {
       this.cherryInstance = new Cherry({
         id: "markdown-container",
-        value: "# yes yes", // 初始内容
+        value: `# 公式测试
+
+行内公式：$a^2 + b^2 = c^2$
+
+块级公式：
+$$
+E = mc^2
+$$
+`,
+        externals: {
+          echarts: window.echarts,
+          katex: window.katex || null,
+          MathJax: window.MathJax,
+        },
         nameSpace: 'cherry',
         themeSettings: {
           // 主题列表，用于切换主题
           themeList: [
-            { className: 'gray', label: 'gray' },
-            { className: 'default', label: '默认' },
-            { className: 'dark', label: '黑' },
-            { className: 'light', label: '白' },
-            { className: 'green', label: '绿' },
-            { className: 'red', label: '粉' },
-            { className: 'violet', label: '紫' },
-            { className: 'blue', label: '蓝' },
-
+            {className: 'div', label: 'div'},
+            {className: 'default', label: 'default'},
+            {className: 'dark', label: 'dark'},
+            {className: 'light', label: 'light'},
+            {className: 'green', label: 'green'},
+            {className: 'red', label: 'red'},
+            {className: 'violet', label: 'violet'},
+            {className: 'blue', label: 'blue'},
+            {className: 'orange', label: 'orange'},
           ],
           // 目前应用的主题
-          mainTheme: 'light',
+          mainTheme: 'div',
           // 目前应用的代码块主题
           codeBlockTheme: 'default',
         },
+        engine: {
+          syntax: {
+            mathBlock: {
+              plugins: true, // 默认加载插件
+              engine: 'MathJax', // katex或MathJax
+              src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js', // 如果使用MathJax plugins，则需要使用该url通过script标签引入
+            },
+            inlineMath: {
+              engine: 'MathJax', // katex或MathJax
+              src: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+            },
+            header: {
+              anchorStyle: "autonumber",
+              strict: false,
+            },
+          },
+        },
         toolbars: {
           // 定义顶部工具栏
-          toolbar: ['bold','italic','strikethrough','|','color','header','ruby','|','list','panel','detail', '|', 'size','theme'],
+          toolbar: ['bold', 'italic', 'strikethrough', '|',
+            'color', 'ruby', '|',
+            'list', 'panel', 'detail', '|',
+            'theme', {insert: ['image', 'audio', 'video', 'link', 'code', 'formula', 'toc', 'table', 'drawIo']},
+            'togglePreview', 'switchModel',
+          ],
           // 定义侧边栏，默认为空
-          // sidebar: ['bold', 'italic', 'strike'],
+          sidebar: [],
           // 定义顶部右侧工具栏，默认为空
           toolbarRight: [],
           // 定义选中文字时弹出的“悬浮工具栏”，默认为 ['bold', 'italic', 'underline', 'strikethrough', 'sub', 'sup', 'quote', '|', 'size', 'color']
@@ -138,12 +175,10 @@ export default {
         alert("标签为空");
         return;
       }
-      this.markdownContent = this.cherryInstance.getMarkdown();
-      // this.cherryInstance.getHtml(this.markdownContent);
       const payload = {
         title: this.title,
-        markdown: this.markdownContent, // 提交原始 Markdown 内容
-        // html: this.htmlContent, // 提交解析后的 HTML
+        markdown: this.cherryInstance.getMarkdown(), // 提交原始 Markdown 内容
+        html: this.cherryInstance.getHtml(), // 提交解析后的 HTML
         tags: this.tags,
       };
 

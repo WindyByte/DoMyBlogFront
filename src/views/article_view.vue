@@ -11,7 +11,6 @@
                   <div class="article-card-content">
                     <h3>{{ article.title }}</h3>
                     <p>{{ article.content ? article.content.slice(0, 100) + '...' : '无数据' }}</p>
-<!--                    <p>{{ // article.content.slice(0, 100) }}...</p>-->
                     <div class="article-footer">
                       <p class="views-count">Views: {{ article.views }}</p>
                     </div>
@@ -36,9 +35,9 @@
       </transition>
     </div>
     <!-- 侧边栏 -->
-    <aside class="sidebar">
-      <relatedArticles/>
-    </aside>
+<!--    <aside class="sidebar">-->
+<!--      <relatedArticles/>-->
+<!--    </aside>-->
   </div>
 </template>
 

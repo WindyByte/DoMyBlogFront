@@ -1,7 +1,7 @@
 .main-pages {
     display: flex;
     gap: 10px; /* 子元素间距 */
-    flex-direction: row; /* 横向排列 */
+    flex-direction: column; /* 横向排列 */
     /*overflow: hidden; !* 防止溢出 *!*/
     box-sizing: border-box; /* 包括边框和内边距 */
     width: 100%;
