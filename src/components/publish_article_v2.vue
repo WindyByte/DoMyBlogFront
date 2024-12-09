@@ -54,7 +54,6 @@
 
 <script>
 import 'cherry-markdown/dist/cherry-markdown.css';
-import 'cherry-markdown/src/sass/themes/orange.scss'
 import 'cherry-markdown/src/sass/themes/diy.scss'
 import Cherry from 'cherry-markdown';
 import {marked} from "marked"; // 用于解析 Markdown
@@ -83,6 +82,10 @@ export default {
     this.initCherryEditor(); // 初始化 Cherry 编辑器
   },
   methods: {
+    /**
+     * APIs: https://tencent.github.io/cherry-markdown/examples/api.html
+     * toolBars: https://github.com/Tencent/cherry-markdown/wiki/%E8%B0%83%E6%95%B4%E5%B7%A5%E5%85%B7%E6%A0%8F
+     */
     initCherryEditor() {
       this.cherryInstance = new Cherry({
         id: "markdown-container",
@@ -95,11 +98,11 @@ $$
 E = mc^2
 $$
 `,
-        externals: {
-          echarts: window.echarts,
-          katex: window.katex || null,
-          MathJax: window.MathJax,
-        },
+        // externals: {
+        //   echarts: window.echarts,
+        //   katex: window.katex || null,
+        //   MathJax: window.MathJax,
+        // },
         nameSpace: 'cherry',
         themeSettings: {
           // 主题列表，用于切换主题
@@ -154,6 +157,9 @@ $$
           float: false,
         },
       });
+      // this.cherryInstance.switchModel('previewOnly');
+      // this.cherryInstance.switchModel('editOnly');
+      this.cherryInstance.switchModel('edit&preview');
     },
     toggleDropdown() {
       this.isOpen = !this.isOpen;

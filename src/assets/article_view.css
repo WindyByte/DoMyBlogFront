@@ -4,7 +4,9 @@
     flex-direction: column; /* 横向排列 */
     /*overflow: hidden; !* 防止溢出 *!*/
     box-sizing: border-box; /* 包括边框和内边距 */
+    align-items: stretch; /* 子元素填充宽度 */
     width: 100%;
+    transition: all 0.3s ease-in-out; /* 动画过渡 */
 }
 
 .content {
@@ -14,7 +16,7 @@
     display: flex;
     /*box-sizing: border-box; !* 包括边框和内边距 *!*/
     flex-direction: column;
-    align-items: flex-start; /* 水平居中 */
+    /*align-items: stretch; !* 水平居中 *!*/
     padding: 3em;
     /*background-color: #ffffff; !* 白色背景 *!*/
     /*border: 1px solid #e3e3e3; !* 浅灰色边框 *!*/
@@ -23,7 +25,8 @@
     transition: all 0.3s ease-in-out; /* 动画过渡 */
 }
 
-.main-pages:hover .content:hover {
+/*.content:hover,*/
+.main-pages:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 悬停时阴影加深 */
 }
 
@@ -31,8 +34,11 @@
     /*width: 138%; !* 宽度占满父容器 *!*/
     margin: 0 0 15px 0; /* 仅设置下边距 */
     /*margin-bottom: 15px; !* 增加分组间距 *!*/
-    width: 140vh;
+    /*width: 160vh;*/
     /*width: 100%;*/
+    width: 100%; /* 基于父容器的宽度 */
+    max-width: 100%; /* 限制最大宽度 */
+    box-sizing: border-box; /* 包括内边距和边框 */
     padding: 15px;
     background-color: #ffffff; /* 浅灰背景 */
     border: 2px solid #ddd;
@@ -175,8 +181,8 @@
 
 /* 弹出窗样式 */
 .popup {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
