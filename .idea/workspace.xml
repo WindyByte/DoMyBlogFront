@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3731f883-3c08-4be8-80e3-7e1d12138ae3" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/gray.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/orange.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/orange.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/article_view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/article_view.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/publish_article_v2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/publish_article_v2.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/article_view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/article_view.vue" afterDir="false" />
@@ -59,7 +55,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
     "ts.external.directory.path": "/Users/bytedance/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -90,6 +86,7 @@
       <workItem from="1732202769424" duration="8643000" />
       <workItem from="1732357479743" duration="8939000" />
       <workItem from="1733369466742" duration="7115000" />
+      <workItem from="1733722259512" duration="532000" />
     </task>
     <servers />
   </component>
