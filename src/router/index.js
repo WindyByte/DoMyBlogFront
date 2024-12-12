@@ -3,7 +3,7 @@ import Home from '../views/home.vue';
 import ArticleView from '../views/article_view.vue';
 import About from '../views/about.vue';
 import Animation from '../components/animation.vue';
-import ArticleDetail from '@/components/article_detail.vue';
+import ArticleDetail from '@/components/article_detail_v2.vue';
 
 const routes = [
     {
@@ -29,6 +29,7 @@ const routes = [
     {
         path: '/article', // 动态路由匹配
         name: 'ArticleDetail',
+        // component: ArticleDetail, // 文章详情页组件
         component: ArticleDetail, // 文章详情页组件
         props: true, // 将路由参数作为 props 传递给组件
     },

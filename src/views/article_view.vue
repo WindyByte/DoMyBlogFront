@@ -1,6 +1,6 @@
 <template>
   <div class="main-pages">
-<!--    <div class="content">-->
+    <div class="content">
       <transition name="popup">
         <div v-if="Object.keys(groupedArticles).length > 0">
           <div v-for="(articles, tag) in groupedArticles" :key="tag" class="tag-group">
@@ -22,6 +22,7 @@
           </div>
         </div>
       </transition>
+      </div>
       <button @click="toggleEditor" class="write-blog-btn">
         <p v-if="!showEditor">写文章</p>
       </button>

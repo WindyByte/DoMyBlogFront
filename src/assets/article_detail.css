@@ -1,11 +1,12 @@
 .article-container {
-    max-width: 70%;
+    max-width: 90%;
     margin: 2rem auto;
     padding: 1.5rem;
-    background: #ffffff; /* 白色背景 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    /*background: #ffffff; !* 白色背景 *!*/
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); !* 轻微阴影 *!*/
     border-radius: 8px; /* 圆角 */
-    font-family: 'Roboto', sans-serif;
+    font-family: monospace, sans-serif;
+    align-items: stretch;
 }
 
 .article-header {

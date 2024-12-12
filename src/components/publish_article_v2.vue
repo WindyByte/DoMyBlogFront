@@ -56,10 +56,10 @@
 import 'cherry-markdown/dist/cherry-markdown.css';
 import 'cherry-markdown/src/sass/themes/diy.scss'
 import Cherry from 'cherry-markdown';
-import {marked} from "marked"; // 用于解析 Markdown
 import api from "@/api/article.js";
 import "@/assets/publish_article.css";
 import {TAG_OPTIONS} from "@/constant/tags.js";
+import {getCherryInstance} from "@/utils/cherryMarkdown.js";
 
 export default {
   data() {
@@ -72,14 +72,18 @@ export default {
       cherryInstance: null, // Cherry 实例
     };
   },
-  computed: {
-    // 实时解析 Markdown 内容为 HTML
-    htmlContent() {
-      return marked(this.markdownContent);
-    },
+  created() {
+    this.cherryInstance = getCherryInstance(); // 初始化 Cherry 编辑器
+    if (this.cherryInstance) {
+      console.info("[publish created] this.cherryInstance: ", this.cherryInstance)
+    }
   },
   mounted() {
-    this.initCherryEditor(); // 初始化 Cherry 编辑器
+    // this.cherryInstance = this.initCherryEditor(); // 初始化 Cherry 编辑器
+    this.cherryInstance = getCherryInstance(); // 初始化 Cherry 编辑器
+    if (this.cherryInstance) {
+      console.info("[publish mounted] this.cherryInstance: ", this.cherryInstance)
+    }
   },
   methods: {
     /**
@@ -87,7 +91,11 @@ export default {
      * toolBars: https://github.com/Tencent/cherry-markdown/wiki/%E8%B0%83%E6%95%B4%E5%B7%A5%E5%85%B7%E6%A0%8F
      */
     initCherryEditor() {
-      this.cherryInstance = new Cherry({
+      if (this.cherryInstance) {
+        console.warn("cherryInstance exist");
+        return this.cherryInstance;
+      }
+      let cherryInstance = new Cherry({
         id: "markdown-container",
         value: `# 公式测试
 
@@ -157,9 +165,10 @@ $$
           float: false,
         },
       });
-      // this.cherryInstance.switchModel('previewOnly');
+      // cherryInstance.switchModel('previewOnly');
       // this.cherryInstance.switchModel('editOnly');
-      this.cherryInstance.switchModel('edit&preview');
+      // this.cherryInstance.switchModel('edit&preview');
+      return cherryInstance;
     },
     toggleDropdown() {
       this.isOpen = !this.isOpen;
@@ -187,7 +196,10 @@ $$
         html: this.cherryInstance.getHtml(), // 提交解析后的 HTML
         tags: this.tags,
       };
-
+      this.cherryInstance = getCherryInstance();
+      if (this.cherryInstance) {
+        console.info("[publish] this.cherryInstance: ", this.cherryInstance)
+      }
       try {
         const response = await fetch(api.publishArticle, {
           method: "POST",

@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3731f883-3c08-4be8-80e3-7e1d12138ae3" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/orange.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/orange.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/diy.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes/diy.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/article_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/article_detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/article_view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/article_view.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/publish_article_v2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/publish_article_v2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/article_view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/article_view.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +48,7 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "feat/cherry/markdown",
+    "git-widget-placeholder": "feat/article/details/v2",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "/Users/bytedance/DoMyBlog/front-vue/node_modules/cherry-markdown/src/sass/themes",
@@ -55,7 +57,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "ts.external.directory.path": "/Users/bytedance/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -63,8 +65,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/node_modules/cherry-markdown/src/sass/themes" />
-      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/assets" />
     </key>
   </component>
   <component name="SharedIndexes">
